@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Merriweather+Sans:wght@300&family=Montserrat+Alternates:wght@200&family=Montserrat:wght@300&family=Noto+Serif+Display:wght@300&family=Pacifico&family=Poppins:ital@1&family=Sacramento&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+    <title>Todo List</title>
+</head>
+
+<body>
+    <div class="title">
+      <button type="button" id="wipeAll" name="button" class="buttonStyle"
+      style="margin-top: 10px; margin-left:6%; float:right; margin-right:5%; position:relative">Wipe everything!</button>
+      <h3 style="padding-left:22%">Todo List</h3>
+
+      <input type="text" placeholder="search your todo here..." id="searchBar"
+      style="font-size:30px; border-radius:10px; padding:5px; text-align:center">
+    </div>
+
+    <div class="addNote">
+      <button id="addNote1" type="button" name="button" class="buttonStyle" role="button">Add Note</button>
+    </div>
+
+    <div class="list">
+      <div class="form1" id="res">
+
+        <div class="smallEntry" style="padding-top: 10px">
+          <label for="" style="padding:20px; font-size:30px"></label>
+          <input class="smallEntry1" type="text" name="" value=""  placeholder='Title'
+          style="font-size:30px; border-radius:10px; padding:5px">
+        </div>
+        <br>
+
+        <div class="bigEntry">
+          <label for="" style="padding:20px; font-size:30px"></label>
+          <textarea class="bigEntry1 smallEntry1" type="textarea" name="" value=""
+          placeholder="What's on your mind?"
+          style="width:100%; height:100%; font-size:30px; border-radius:10px; padding:5px;"></textarea>
+        </div>
+        <br>
+
+        <div class="smallEntry" style="padding-top: 10px; font-size:30px">
+          <label for="" style="padding:20px"></label>
+          <input class="smallEntry2" type="text" name="" value="" placeholder="Your name"
+          style="font-size:30px; border-radius:10px; padding:5px" >
+        </div>
+
+        <button type="button" name="button" id="btn" class="buttonStyle" style="margin-top:20px; margin-left:6%">submit</button>
+      </div>
+      <div class="adjacentDiv">
+        <ul class="list-items" id="listData" style="list-style: none; ">
+
+        </ul>
+      </div>
+      <!-- <textarea id="text" name="name" rows="8" cols="80" placeholder="enter text here..."></textarea> -->
+    </div>
+    <script src="script.js" charset="utf-8"></script>
+</body>
+</html>
