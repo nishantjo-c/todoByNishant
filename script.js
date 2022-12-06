@@ -13,6 +13,7 @@ var listItems = document.getElementsByClassName('list-items')
 const title = document.getElementsByClassName('smallEntry1');
 const content = document.getElementsByClassName('bigEntry1');
 
+//  local Storage data to load when page reloads
 for(let i =0; i<localStorage.length; i++){
   // console.log(localStorage.getItem(localStorage.key(i)));
   const date = new Date();
@@ -21,9 +22,9 @@ for(let i =0; i<localStorage.length; i++){
       style="height:10%; width:100%; margin-left:0; border-radius: 10px; margin-bottom:10px; padding:10px; font-family: 'Pacifico', cursive;">
       <p style="float:right; padding-right:10px">
       ${date.getHours() > 12 ? date.getHours() - 12 : date.getHours()}:${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}</p>
-      <h1>${localStorage.key(i)}</h1>
+      <h1 class="heading">${localStorage.key(i)}</h1>
       <button type="button" class="delBtn buttonStyle" style="float:right; margin-right:10px">delete</button>
-      <p>${localStorage.getItem(localStorage.key(i))}</p>
+      <p class="bodyContent">${localStorage.getItem(localStorage.key(i))}</p>
       </li>`
       form[0].style.display = 'none'
       listItems[0].insertAdjacentHTML("afterbegin", html)
@@ -44,9 +45,9 @@ submitBtn.addEventListener('click', (event) => {
       `<li class="list li"
       style="height:10%; width:100%; margin-left:0; border-radius: 10px; margin-bottom:10px; padding:10px; font-family: 'Pacifico', cursive;">
         <p style="float:right; padding-right:10px">${hours}:${mins}</p>
-        <h1>${title[0].value}</h1>
+        <h1 class="heading">${title[0].value}</h1>
         <button type="button" class="delBtn buttonStyle" style="float:right; margin-right:10px">delete</button>
-        <p>${content[0].value}</p>
+        <p class="bodyContent">${content[0].value}</p>
       </li>`
 
 // Form display value to none when submit is clicked and adjacentDiv that contains content of title etc to be displayed.
@@ -116,4 +117,21 @@ searchBar.addEventListener('keyup', function(e){
 const wipeAll = document.querySelector('#wipeAll')
 wipeAll.addEventListener('click', () => {
   localStorage.clear();
+  location.reload(true);
 })
+
+
+//  Function that will expand the content of todo
+const expandContent = document.querySelectorAll('li');
+for(let i=0; i<expandContent.length; i++){
+  // console.log(expandContent[i]);
+  expandContent[i].addEventListener('click', (e)=> {
+  // console.log(e.target);
+  if(e.target.className == 'bodyContent'){
+    console.log(e.target.className);
+  }
+  else if (e.target.className == 'heading') {
+    console.log(e.target.className);
+  }
+})
+}

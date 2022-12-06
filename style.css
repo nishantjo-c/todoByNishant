@@ -68,3 +68,7 @@ body{
   background-color: white;
   color: black;
 }
+
+p{
+  word-wrap: break-word;
+}
